@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2iaijvhupg11"]
+
+[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_inventory.gd" id="1_f352c"]
+[ext_resource type="Script" path="res://addons/gloot/core/inventory.gd" id="2_1duw2"]
+[ext_resource type="Resource" uid="uid://sfu16mj28v8o" path="res://resources/inventory.tres" id="3_fbexs"]
+[ext_resource type="Script" path="res://addons/gloot/core/inventory_item.gd" id="4_xywsx"]
+
+[node name="Inventory" type="Node2D"]
+visible = false
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("2_1duw2")
+item_protoset = ExtResource("3_fbexs")
+
+[node name="InventoryItem" type="Node" parent="Inventory"]
+script = ExtResource("4_xywsx")
+protoset = ExtResource("3_fbexs")
+prototype_id = "minimal_item"
+
+[node name="CtrlInventory" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 43.0
+offset_top = 97.0
+offset_right = 1691.0
+offset_bottom = 978.0
+script = ExtResource("1_f352c")
+inventory_path = NodePath("../Inventory")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 51.0
+offset_top = 17.0
+offset_right = 1340.0
+offset_bottom = 95.0
+text = "Inventory"

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://screens/forest-graveyard/scripts/forest-graveyard.gd" id="1_2jmgn"]
 [ext_resource type="Texture2D" uid="uid://p1x52tuqjydv" path="res://screens/forest-graveyard/assets/aecd32b3-d98e-49f9-909f-c8cb5a17f7b0.webp" id="1_qbmk5"]
-[ext_resource type="Texture2D" uid="uid://coe2a2l8f03n5" path="res://screens/forest-graveyard/assets/spade.png" id="4_7cneq"]
 [ext_resource type="PackedScene" uid="uid://8tb6j7cbc1uu" path="res://shared/compass/compass.tscn" id="5_jxqvg"]
+[ext_resource type="Texture2D" uid="uid://coe2a2l8f03n5" path="res://shared/inventory/images/spade.png" id="5_ophip"]
 [ext_resource type="PackedScene" uid="uid://0njrbnrxk1ij" path="res://shared/item/item.tscn" id="6_7ugc8"]
 
 [node name="Forest" type="Node2D"]
@@ -17,21 +17,10 @@ script = ExtResource("1_2jmgn")
 [node name="Compass" parent="Background" instance=ExtResource("5_jxqvg")]
 position = Vector2(128, 919)
 
-[node name="Item" parent="Background" instance=ExtResource("6_7ugc8")]
+[node name="Item" parent="." instance=ExtResource("6_7ugc8")]
 
-[node name="Area2D" parent="Background/Item" index="0"]
-position = Vector2(207, 120)
+[node name="Image" parent="Item" index="1"]
+texture = ExtResource("5_ophip")
 
-[node name="CollisionPolygon2D" parent="Background/Item/Area2D" index="0"]
-visible = false
-position = Vector2(654, 625)
-polygon = PackedVector2Array(-26.4968, 107.593, -86.6242, 96.7347, -59.1083, 37.5093, -34.6497, 43.4319, 27.5159, -53.3028, 50, -49, -12.2293, 54.2899, 12.2292, 56.264)
-
-[node name="Image" parent="Background/Item" index="1"]
-position = Vector2(833, 780)
-texture = ExtResource("4_7cneq")
-
-[node name="HoverLabel" parent="Background/Item" index="2"]
-text = "A spade is left behind by the grave diggers."
-
-[editable path="Background/Item"]
+[editable path="Item"]
+[editable path="Item/Fadingmessage"]

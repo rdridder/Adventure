@@ -48,6 +48,9 @@ corner_radius_bottom_left = 3
 shadow_size = 5
 
 [resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 28
+Label/fonts/font = ExtResource("1_5efl7")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 1)
 RichTextLabel/colors/font_selected_color = Color(0, 0, 0, 0)

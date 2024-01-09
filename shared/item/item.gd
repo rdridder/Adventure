@@ -17,6 +17,25 @@ func _on_mouse_exited():
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT  and event.pressed:
+		var parent = get_parent()
+		var inventoryItem = parent.get_node("InventoryItem")
+		var globalInventory = get_node("/root/GlobalInventory")
+		var fadingMessage = parent.get_node("Fadingmessage")
+		var image = parent.get_node("Image")
+		var area = parent.get_node("Area2D")
+		var hoverLabel = parent.get_node("HoverLabel")
+		fadingMessage.showMessage()
+		globalInventory.get_node("Inventory").add_item(inventoryItem)
+		image.visible = false
+		area.visible = false
+		hoverLabel.visible = false
+		
+		
+		
+		
+		print(globalInventory)
+		
+		
 		print("Clicked")
 		print(event)
 		print(shape_idx)

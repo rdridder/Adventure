@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coe2a2l8f03n5"
-path="res://.godot/imported/spade.png-edfc3d0b18dbc503abbe5693f07a443c.ctex"
+uid="uid://cscrgiuxiuidq"
+path="res://.godot/imported/hammer.png-0d7569d1c77dfa43c6a148f0b5e4e5cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/forest-graveyard/assets/spade.png"
-dest_files=["res://.godot/imported/spade.png-edfc3d0b18dbc503abbe5693f07a443c.ctex"]
+source_file="res://shared/inventory/images/hammer.png"
+dest_files=["res://.godot/imported/hammer.png-0d7569d1c77dfa43c6a148f0b5e4e5cf.ctex"]
 
 [params]
 
