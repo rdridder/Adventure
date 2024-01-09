@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=3 uid="uid://8tb6j7cbc1uu"]
+
+[ext_resource type="Texture2D" uid="uid://bbtds7nyd8qyw" path="res://shared/compass/compass.png" id="1_xkvhc"]
+[ext_resource type="Texture2D" uid="uid://fobixqktxa55" path="res://shared/compass/n.png" id="2_jea7m"]
+[ext_resource type="Texture2D" uid="uid://7niqfj3a7u0q" path="res://shared/compass/s.png" id="3_dlnmh"]
+[ext_resource type="Texture2D" uid="uid://rodg0ivwum14" path="res://shared/compass/e.png" id="4_2if4x"]
+[ext_resource type="Texture2D" uid="uid://bbg1clua247q7" path="res://shared/compass/w.png" id="5_mvvr4"]
+[ext_resource type="Texture2D" uid="uid://6vedck65g5er" path="res://shared/compass/light-w.png" id="6_vw0fx"]
+[ext_resource type="Texture2D" uid="uid://bi63bjwfthge4" path="res://shared/compass/light-s.png" id="7_rspoj"]
+[ext_resource type="Texture2D" uid="uid://b0igtfnb8bje5" path="res://shared/compass/light-e.png" id="8_5vu7l"]
+[ext_resource type="PackedScene" uid="uid://b4mq375ctqnkh" path="res://shared/mouseover/mouseover.tscn" id="9_36fnn"]
+[ext_resource type="Texture2D" uid="uid://ctf5vdbfb8wkw" path="res://shared/compass/light-n.png" id="10_p8mgj"]
+
+[node name="Compass" type="Node2D"]
+position = Vector2(512, 532)
+
+[node name="Compass" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = ExtResource("1_xkvhc")
+
+[node name="N" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -166)
+texture = ExtResource("2_jea7m")
+
+[node name="S" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(3, 184)
+texture = ExtResource("3_dlnmh")
+
+[node name="E" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(236, 3)
+texture = ExtResource("4_2if4x")
+
+[node name="W" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-227, 5)
+texture = ExtResource("5_mvvr4")
+
+[node name="Light-w" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-230, 5)
+texture = ExtResource("6_vw0fx")
+
+[node name="Light-s" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, 183)
+texture = ExtResource("7_rspoj")
+
+[node name="Light-e" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(236, 3)
+texture = ExtResource("8_5vu7l")
+
+[node name="Mouseover n" parent="." instance=ExtResource("9_36fnn")]
+position = Vector2(-604, -63)
+
+[node name="Area2D" parent="Mouseover n" index="0"]
+position = Vector2(-75, 71)
+
+[node name="CollisionPolygon2D" parent="Mouseover n/Area2D" index="0"]
+visible = false
+position = Vector2(501, -168)
+polygon = PackedVector2Array(166.914, 120.465, 172.84, 73.0691, 178.765, 73.0691, 184.691, 120.465, 175.802, 118.49)
+
+[node name="Image" parent="Mouseover n" index="1"]
+visible = true
+position = Vector2(604, 2)
+texture = ExtResource("10_p8mgj")
+
+[node name="Mouseover e" parent="." instance=ExtResource("9_36fnn")]
+position = Vector2(233, -14)
+
+[node name="CollisionPolygon2D" parent="Mouseover e/Area2D" index="0"]
+visible = false
+position = Vector2(1, -3.00003)
+polygon = PackedVector2Array(-212.346, 9.81848, -208.395, -0.0557251, -212.346, -10.9173, -133.333, -2.03055)
+
+[node name="Image" parent="Mouseover e" index="1"]
+position = Vector2(-174, -4)
+texture = ExtResource("8_5vu7l")
+
+[node name="Mouseover s" parent="." instance=ExtResource("9_36fnn")]
+position = Vector2(-5, 173)
+
+[node name="CollisionPolygon2D" parent="Mouseover s/Area2D" index="0"]
+visible = false
+polygon = PackedVector2Array(1.97531, -120.521, -4.93826, -170.879, 3.95062, -167.917, 14.8148, -170.879, 7.90125, -120.521)
+
+[node name="Image" parent="Mouseover s" index="1"]
+position = Vector2(6, -146)
+texture = ExtResource("7_rspoj")
+
+[node name="Mouseover w" parent="." instance=ExtResource("9_36fnn")]
+position = Vector2(-312, 1)
+
+[node name="CollisionPolygon2D" parent="Mouseover w/Area2D" index="0"]
+visible = false
+polygon = PackedVector2Array(289.383, -8.94244, 209.383, -21.7789, 290.37, -31.6531, 287.407, -19.8041)
+
+[node name="Image" parent="Mouseover w" index="1"]
+position = Vector2(255, -19)
+texture = ExtResource("6_vw0fx")
+
+[editable path="Mouseover n"]
+[editable path="Mouseover e"]
+[editable path="Mouseover s"]
+[editable path="Mouseover w"]

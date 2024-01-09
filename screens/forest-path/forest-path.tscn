@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3ln5421segs3"]
+
+[ext_resource type="Script" path="res://screens/forest-path/scripts/forest-path.gd" id="1_wgyca"]
+[ext_resource type="Texture2D" uid="uid://ds70djwxlllno" path="res://screens/forest-path/assets/e3f2849b-dbdc-4327-99c0-038c1e38877e.webp" id="2_wji40"]
+[ext_resource type="PackedScene" uid="uid://8tb6j7cbc1uu" path="res://shared/compass/compass.tscn" id="3_ohy57"]
+
+[node name="Forest" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_wji40")
+script = ExtResource("1_wgyca")
+
+[node name="Compass" parent="Background" instance=ExtResource("3_ohy57")]
+position = Vector2(128, 919)
