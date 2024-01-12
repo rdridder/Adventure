@@ -5,14 +5,14 @@
 [resource]
 script = ExtResource("1_ter3a")
 json_data = "[
-    {
-        \"id\": \"minimal_item\",
-		\"name\":\"test\",
-		\"image\":\"res://shared/item/item.png\"
-    },
-    {
-        \"id\": \"hammer\",
-		\"name\":\"Hammer\",
-		\"image\":\"res://shared/item/item.png\"
-    }
+	{
+		\"id\": \"minimal_item\",
+		\"name\": \"test\",
+		\"image\": \"res://shared/item/item.png\"
+	},
+	{
+		\"id\": \"hammer\",
+		\"name\": \"Hammer\",
+		\"image\": \"res://shared/inventory/images/hammer.png\"
+	}
 ]"

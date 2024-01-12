@@ -1,109 +1,104 @@
-[gd_scene load_steps=12 format=3 uid="uid://8tb6j7cbc1uu"]
+[gd_scene load_steps=11 format=3 uid="uid://da47abx5vx1x2"]
 
-[ext_resource type="Texture2D" uid="uid://bbtds7nyd8qyw" path="res://shared/compass/compass.png" id="1_xkvhc"]
+[ext_resource type="Texture2D" uid="uid://c1lntvm2awylf" path="res://shared/compass/images/compass.png" id="1_tr5db"]
 [ext_resource type="Script" path="res://shared/compass/compass.gd" id="2_fgmvr"]
-[ext_resource type="Texture2D" uid="uid://fobixqktxa55" path="res://shared/compass/n.png" id="2_jea7m"]
-[ext_resource type="Texture2D" uid="uid://7niqfj3a7u0q" path="res://shared/compass/s.png" id="3_dlnmh"]
-[ext_resource type="Texture2D" uid="uid://rodg0ivwum14" path="res://shared/compass/e.png" id="4_2if4x"]
-[ext_resource type="Texture2D" uid="uid://bbg1clua247q7" path="res://shared/compass/w.png" id="5_mvvr4"]
-[ext_resource type="Texture2D" uid="uid://6vedck65g5er" path="res://shared/compass/light-w.png" id="6_vw0fx"]
-[ext_resource type="Texture2D" uid="uid://bi63bjwfthge4" path="res://shared/compass/light-s.png" id="7_rspoj"]
-[ext_resource type="Texture2D" uid="uid://b0igtfnb8bje5" path="res://shared/compass/light-e.png" id="8_5vu7l"]
-[ext_resource type="PackedScene" uid="uid://b4mq375ctqnkh" path="res://shared/mouseover/mouseover.tscn" id="9_36fnn"]
-[ext_resource type="Texture2D" uid="uid://ctf5vdbfb8wkw" path="res://shared/compass/light-n.png" id="10_p8mgj"]
+[ext_resource type="Texture2D" uid="uid://brr3vgd6udmfl" path="res://shared/compass/images/n-disabled.png" id="3_ekhkf"]
+[ext_resource type="Texture2D" uid="uid://bxsnie5yrwkj" path="res://shared/compass/images/e-disabled.png" id="4_0iv28"]
+[ext_resource type="Texture2D" uid="uid://dhp2usctxr5u" path="res://shared/compass/images/s-disabled.png" id="5_tnokn"]
+[ext_resource type="Texture2D" uid="uid://svkdj6d3k7a0" path="res://shared/compass/images/w-disabled.png" id="6_dpq7q"]
+[ext_resource type="Texture2D" uid="uid://c7dag214gm0lr" path="res://shared/compass/images/light-e.png" id="6_g7gyh"]
+[ext_resource type="Texture2D" uid="uid://d1igh31cdsax3" path="res://shared/compass/images/light-n.png" id="7_b3tdd"]
+[ext_resource type="Texture2D" uid="uid://b373u1uoh7kad" path="res://shared/compass/images/light-s.png" id="8_qm3hp"]
+[ext_resource type="Texture2D" uid="uid://byt6634eith1r" path="res://shared/compass/images/light-w.png" id="9_165qa"]
 
 [node name="Compass" type="Node2D"]
-position = Vector2(512, 532)
 script = ExtResource("2_fgmvr")
 
 [node name="Compass" type="Sprite2D" parent="."]
-position = Vector2(0, -24)
-texture = ExtResource("1_xkvhc")
+texture = ExtResource("1_tr5db")
+centered = false
 
-[node name="N" type="Sprite2D" parent="."]
+[node name="South" type="Node2D" parent="."]
+
+[node name="SDisabled" type="Sprite2D" parent="South"]
 visible = false
-position = Vector2(0, -61)
-texture = ExtResource("2_jea7m")
+texture = ExtResource("5_tnokn")
+centered = false
 
-[node name="S" type="Sprite2D" parent="."]
+[node name="SHoverArea2D" type="Area2D" parent="South"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="South/SHoverArea2D"]
+position = Vector2(0, 0.342621)
+scale = Vector2(1, 0.997159)
+polygon = PackedVector2Array(144, 147, 126, 152, 109, 147, 126, 235)
+
+[node name="SHover" type="Sprite2D" parent="South/SHoverArea2D"]
 visible = false
-position = Vector2(0, 26)
-texture = ExtResource("3_dlnmh")
+texture = ExtResource("8_qm3hp")
+centered = false
 
-[node name="E" type="Sprite2D" parent="."]
+[node name="East" type="Node2D" parent="."]
+
+[node name="EDisabled" type="Sprite2D" parent="East"]
 visible = false
-position = Vector2(60, -18)
-texture = ExtResource("4_2if4x")
+texture = ExtResource("4_0iv28")
+centered = false
 
-[node name="W" type="Sprite2D" parent="."]
+[node name="EHoverArea2D" type="Area2D" parent="East"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="East/EHoverArea2D"]
+polygon = PackedVector2Array(151, 108, 153, 124, 149, 143, 237, 126)
+
+[node name="EHover" type="Sprite2D" parent="East/EHoverArea2D"]
 visible = false
-position = Vector2(-58, -18)
-texture = ExtResource("5_mvvr4")
+texture = ExtResource("6_g7gyh")
+centered = false
 
-[node name="Mouseover N" parent="." instance=ExtResource("9_36fnn")]
-position = Vector2(-604, -63)
+[node name="North" type="Node2D" parent="."]
 
-[node name="Area2D" parent="Mouseover N" index="0"]
-position = Vector2(-75, 71)
-
-[node name="CollisionPolygon2D" parent="Mouseover N/Area2D" index="0"]
+[node name="NDisabled" type="Sprite2D" parent="North"]
 visible = false
-position = Vector2(501, -168)
-polygon = PackedVector2Array(166.914, 120.465, 172.84, 73.0691, 178.765, 73.0691, 184.691, 120.465, 175.802, 118.49)
+texture = ExtResource("3_ekhkf")
+centered = false
 
-[node name="Image" parent="Mouseover N" index="1"]
-position = Vector2(604, 2)
-texture = ExtResource("10_p8mgj")
+[node name="NHoverArea2D" type="Area2D" parent="North"]
 
-[node name="HoverLabel" parent="Mouseover N" index="2"]
-text = ""
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="North/NHoverArea2D"]
+polygon = PackedVector2Array(126, 93, 141, 99, 126, 18, 110, 99)
 
-[node name="Mouseover E" parent="." instance=ExtResource("9_36fnn")]
-position = Vector2(233, -14)
-
-[node name="CollisionPolygon2D" parent="Mouseover E/Area2D" index="0"]
+[node name="NHover" type="Sprite2D" parent="North/NHoverArea2D"]
 visible = false
-position = Vector2(1, -3.00003)
-polygon = PackedVector2Array(-212.346, 9.81848, -208.395, -0.0557251, -212.346, -10.9173, -133.333, -2.03055)
+texture = ExtResource("7_b3tdd")
+centered = false
 
-[node name="Image" parent="Mouseover E" index="1"]
-position = Vector2(-174, -4)
-texture = ExtResource("8_5vu7l")
+[node name="West" type="Node2D" parent="."]
 
-[node name="HoverLabel" parent="Mouseover E" index="2"]
-text = ""
-
-[node name="Mouseover S" parent="." instance=ExtResource("9_36fnn")]
-position = Vector2(-5, 173)
-
-[node name="CollisionPolygon2D" parent="Mouseover S/Area2D" index="0"]
+[node name="WDisabled" type="Sprite2D" parent="West"]
 visible = false
-polygon = PackedVector2Array(1.97531, -120.521, -4.93826, -170.879, 3.95062, -167.917, 14.8148, -170.879, 7.90125, -120.521)
+texture = ExtResource("6_dpq7q")
+centered = false
 
-[node name="Image" parent="Mouseover S" index="1"]
-position = Vector2(6, -146)
-texture = ExtResource("7_rspoj")
+[node name="WHoverArea2D" type="Area2D" parent="West"]
 
-[node name="HoverLabel" parent="Mouseover S" index="2"]
-text = ""
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="West/WHoverArea2D"]
+position = Vector2(0, 0.342621)
+scale = Vector2(1, 0.997159)
+polygon = PackedVector2Array(102, 141.058, 97, 126.015, 102, 107.964, 17, 125.013)
 
-[node name="Mouseover W" parent="." instance=ExtResource("9_36fnn")]
-position = Vector2(-312, 1)
-
-[node name="CollisionPolygon2D" parent="Mouseover W/Area2D" index="0"]
+[node name="WHover" type="Sprite2D" parent="West/WHoverArea2D"]
 visible = false
-polygon = PackedVector2Array(289.383, -8.94244, 209.383, -21.7789, 290.37, -31.6531, 287.407, -19.8041)
+texture = ExtResource("9_165qa")
+centered = false
 
-[node name="Image" parent="Mouseover W" index="1"]
-position = Vector2(255, -19)
-texture = ExtResource("6_vw0fx")
-
-[node name="HoverLabel" parent="Mouseover W" index="2"]
-text = ""
-
-[connection signal="ready" from="Compass" to="Compass" method="_on_ready"]
-
-[editable path="Mouseover N"]
-[editable path="Mouseover E"]
-[editable path="Mouseover S"]
-[editable path="Mouseover W"]
+[connection signal="input_event" from="South/SHoverArea2D" to="." method="_on_s_hover_area_2d_input_event"]
+[connection signal="mouse_entered" from="South/SHoverArea2D" to="." method="_on_s_hover_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="South/SHoverArea2D" to="." method="_on_s_hover_area_2d_mouse_exited"]
+[connection signal="input_event" from="East/EHoverArea2D" to="." method="_on_e_hover_area_2d_input_event"]
+[connection signal="mouse_entered" from="East/EHoverArea2D" to="." method="_on_e_hover_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="East/EHoverArea2D" to="." method="_on_e_hover_area_2d_mouse_exited"]
+[connection signal="input_event" from="North/NHoverArea2D" to="." method="_on_n_hover_area_2d_input_event"]
+[connection signal="mouse_entered" from="North/NHoverArea2D" to="." method="_on_n_hover_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="North/NHoverArea2D" to="." method="_on_n_hover_area_2d_mouse_exited"]
+[connection signal="input_event" from="West/WHoverArea2D" to="." method="_on_w_hover_area_2d_input_event"]
+[connection signal="mouse_entered" from="West/WHoverArea2D" to="." method="_on_w_hover_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="West/WHoverArea2D" to="." method="_on_w_hover_area_2d_mouse_exited"]

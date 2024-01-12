@@ -1,26 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxgqj0w2js5k5"]
+[gd_scene load_steps=5 format=3 uid="uid://dxgqj0w2js5k5"]
 
-[ext_resource type="Script" path="res://screens/forest-graveyard/scripts/forest-graveyard.gd" id="1_2jmgn"]
+[ext_resource type="Script" path="res://screens/forest-graveyard/forest-graveyard.gd" id="1_hih0s"]
 [ext_resource type="Texture2D" uid="uid://p1x52tuqjydv" path="res://screens/forest-graveyard/assets/aecd32b3-d98e-49f9-909f-c8cb5a17f7b0.webp" id="1_qbmk5"]
-[ext_resource type="PackedScene" uid="uid://8tb6j7cbc1uu" path="res://shared/compass/compass.tscn" id="5_jxqvg"]
 [ext_resource type="Texture2D" uid="uid://coe2a2l8f03n5" path="res://shared/inventory/images/spade.png" id="5_ophip"]
 [ext_resource type="PackedScene" uid="uid://0njrbnrxk1ij" path="res://shared/item/item.tscn" id="6_7ugc8"]
 
 [node name="Forest" type="Node2D"]
+script = ExtResource("1_hih0s")
+north = "res://screens/forest-path/forest-path.tscn"
+east = "<null>"
+south = "res://screens/forest-new/forest.tscn"
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_qbmk5")
-script = ExtResource("1_2jmgn")
-
-[node name="Compass" parent="Background" instance=ExtResource("5_jxqvg")]
-position = Vector2(128, 919)
 
 [node name="Item" parent="." instance=ExtResource("6_7ugc8")]
 
+[node name="CollisionPolygon2D" parent="Item/Area2D" index="0"]
+position = Vector2(808, 801)
+polygon = PackedVector2Array(18.3439, 50.3415, -52.9937, 43.4319, -18.3439, -15.7935, 3.05731, -9.87091, 64.2038, -106.606, 86.6242, -101.67, 22.4203, -2.9613, 45.8599, 8.88379)
+
 [node name="Image" parent="Item" index="1"]
+position = Vector2(817, 780)
 texture = ExtResource("5_ophip")
+
+[node name="HoverLabel" parent="Item" index="2"]
+text = "The grace diggers left a spade in the ground."
+
+[node name="Label" parent="Item/Fadingmessage" index="0"]
+text = "You take the spade from ground."
 
 [editable path="Item"]
 [editable path="Item/Fadingmessage"]

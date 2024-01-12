@@ -1,19 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0flwk5g1jv3o"]
+[gd_scene load_steps=8 format=3 uid="uid://b0flwk5g1jv3o"]
 
+[ext_resource type="Script" path="res://screens/forest/forest.gd" id="1_ecuk4"]
 [ext_resource type="Texture2D" uid="uid://comw0as2f3imu" path="res://screens/forest/assets/9ec31c36-79b8-4a4a-9328-622f1d67471f.webp" id="1_y3xup"]
 [ext_resource type="Script" path="res://screens/forest/scripts/forest.gd" id="2_kl66j"]
+[ext_resource type="PackedScene" uid="uid://enqihp2ojtwd" path="res://shared/gui/gui.tscn" id="3_o88om"]
 [ext_resource type="PackedScene" uid="uid://b4mq375ctqnkh" path="res://shared/mouseover/mouseover.tscn" id="3_olaur"]
 [ext_resource type="Texture2D" uid="uid://4bv6g5knyvc7" path="res://screens/forest/assets/small-skull-highlight.png" id="4_hffdf"]
 [ext_resource type="Texture2D" uid="uid://bqak1dlosrh4g" path="res://screens/forest/assets/big-skull-highlight.png" id="4_sn7hb"]
-[ext_resource type="PackedScene" uid="uid://8tb6j7cbc1uu" path="res://shared/compass/compass.tscn" id="5_umjn6"]
 
 [node name="Forest" type="Node2D"]
+script = ExtResource("1_ecuk4")
+north = "res://screens/forest-graveyard/forest-graveyard.tscn"
+south = "res://shared/screen/navigatable_start_scene.tscn"
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_y3xup")
 script = ExtResource("2_kl66j")
+
+[node name="Gui" parent="Background" instance=ExtResource("3_o88om")]
 
 [node name="Small skull" parent="Background" instance=ExtResource("3_olaur")]
 position = Vector2(360.477, 672.281)
@@ -42,9 +48,6 @@ texture = ExtResource("4_sn7hb")
 
 [node name="HoverLabel" parent="Background/Large skull" index="2"]
 text = "Several skulls lie scattered in the forest, this is a big one."
-
-[node name="Compass" parent="Background" instance=ExtResource("5_umjn6")]
-position = Vector2(128, 919)
 
 [editable path="Background/Small skull"]
 [editable path="Background/Large skull"]

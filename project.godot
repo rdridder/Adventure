@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="Adventure"
-run/main_scene="res://screens/forest/forest.tscn"
+run/main_scene="res://shared/screen/screen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalInventory="*res://shared/inventory/inventory.tscn"
+Transitions="*res://addons/transitions/Transitions.gd"
+FancyFade="*res://addons/transitions/FancyFade.gd"
 
 [display]
 
@@ -31,7 +33,7 @@ project/assembly_name="Adventure"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gloot/plugin.cfg")
+enabled=PackedStringArray("res://addons/gloot/plugin.cfg", "res://addons/transitions/plugin.cfg")
 
 [gui]
 

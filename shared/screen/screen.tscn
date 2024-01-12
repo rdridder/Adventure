@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bocjkiori1a0s"]
+
+[ext_resource type="Script" path="res://shared/screen/screen.gd" id="1_274c5"]
+[ext_resource type="PackedScene" uid="uid://dq5e4jqq2wyed" path="res://shared/screen/navigatable_start_scene.tscn" id="1_c3yxc"]
+[ext_resource type="PackedScene" uid="uid://enqihp2ojtwd" path="res://shared/gui/gui.tscn" id="2_uiany"]
+
+[node name="Screen" type="Node2D"]
+script = ExtResource("1_274c5")
+
+[node name="SceneHolder" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="NavigatableStartScene" parent="SceneHolder" instance=ExtResource("1_c3yxc")]
+
+[node name="Gui" parent="." instance=ExtResource("2_uiany")]
+unique_name_in_owner = true
