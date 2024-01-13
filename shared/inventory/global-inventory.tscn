@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c65rg2dbfg1is"]
+
+[ext_resource type="Script" path="res://addons/gloot/core/inventory_item.gd" id="1_k1dpy"]
+[ext_resource type="Script" path="res://addons/gloot/core/inventory.gd" id="2_syil8"]
+[ext_resource type="Resource" uid="uid://sfu16mj28v8o" path="res://resources/inventory.tres" id="3_kucty"]
+
+[node name="Global-inventory" type="Node"]
+script = ExtResource("1_k1dpy")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("2_syil8")
+item_protoset = ExtResource("3_kucty")
+
+[node name="_Node_53354" type="Node" parent="Inventory"]
+script = ExtResource("1_k1dpy")
+protoset = ExtResource("3_kucty")
+prototype_id = "spade"
+
+[node name="_Node_53359" type="Node" parent="Inventory"]
+script = ExtResource("1_k1dpy")
+protoset = ExtResource("3_kucty")
+prototype_id = "black-rose"
+
+[node name="_Node_53367" type="Node" parent="Inventory"]
+script = ExtResource("1_k1dpy")
+protoset = ExtResource("3_kucty")
+prototype_id = "ring"
+
+[node name="_Node_53372" type="Node" parent="Inventory"]
+script = ExtResource("1_k1dpy")
+protoset = ExtResource("3_kucty")
+prototype_id = "dagger"

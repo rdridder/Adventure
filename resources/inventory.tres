@@ -6,13 +6,31 @@
 script = ExtResource("1_ter3a")
 json_data = "[
 	{
-		\"id\": \"minimal_item\",
-		\"name\": \"test\",
-		\"image\": \"res://shared/item/item.png\"
+		\"id\": \"spade\",
+		\"name\": \"Spade\",
+		\"description\": \"An ornate small garden spade.\",
+		\"image\": \"res://shared/inventory/images/spade2-inventory.png\",
+		\"image-world\": \"res://shared/inventory/images/spade2-world.png\"
 	},
 	{
-		\"id\": \"hammer\",
-		\"name\": \"Hammer\",
-		\"image\": \"res://shared/inventory/images/hammer.png\"
+		\"id\": \"black-rose\",
+		\"name\": \"Black Rose\",
+		\"description\": \"An beatiful black rose. The deep black is very unusual for a rose.\",
+		\"image\": \"res://shared/inventory/images/black-rose-inventory.png\",
+		\"image-world\": \"res://shared/inventory/images/black-rose-world.png\"
+	},	
+	{
+		\"id\": \"ring\",
+		\"name\": \"Ring\",
+		\"description\": \"A golden ring.\",
+		\"image\": \"res://shared/inventory/images/ring-inventory.png\",
+		\"image-world\": \"res://shared/inventory/images/ring-world.png\"
+	},		
+	{
+		\"id\": \"dagger\",
+		\"name\": \"Dagger\",
+		\"description\": \"A plain dagger.\",
+		\"image\": \"res://shared/inventory/images/dagger-inventory.png\",
+		\"image-world\": \"res://shared/inventory/images/dagger-world.png\"
 	}
 ]"

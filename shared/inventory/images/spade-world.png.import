@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds2rdqxacdr0f"
-path="res://.godot/imported/chest.png-a574ed2ff59aaf71f9b332c344df40e4.ctex"
+uid="uid://c8qqwl510q6me"
+path="res://.godot/imported/spade-world.png-c1609b14f9bd0f13d402b584b9e9aee5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://shared/inventory/images/chest.png"
-dest_files=["res://.godot/imported/chest.png-a574ed2ff59aaf71f9b332c344df40e4.ctex"]
+source_file="res://shared/inventory/images/spade-world.png"
+dest_files=["res://.godot/imported/spade-world.png-c1609b14f9bd0f13d402b584b9e9aee5.ctex"]
 
 [params]
 
