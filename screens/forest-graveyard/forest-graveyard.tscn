@@ -5,11 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://coe2a2l8f03n5" path="res://shared/inventory/images/spade.png" id="5_ophip"]
 [ext_resource type="PackedScene" uid="uid://0njrbnrxk1ij" path="res://shared/item/item.tscn" id="6_7ugc8"]
 
-[node name="Forest" type="Node2D"]
+[node name="Forest2" type="Node2D"]
 script = ExtResource("1_hih0s")
 north = "res://screens/forest-path/forest-path.tscn"
-east = "<null>"
-south = "res://screens/forest-new/forest.tscn"
+south = "res://screens/forest/forest.tscn"
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 40.0

@@ -11,7 +11,6 @@
 [node name="Forest" type="Node2D"]
 script = ExtResource("1_ecuk4")
 north = "res://screens/forest-graveyard/forest-graveyard.tscn"
-south = "res://shared/screen/navigatable_start_scene.tscn"
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 40.0
