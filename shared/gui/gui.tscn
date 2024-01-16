@@ -1,13 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://enqihp2ojtwd"]
+[gd_scene load_steps=10 format=3 uid="uid://enqihp2ojtwd"]
 
 [ext_resource type="Script" path="res://shared/gui/gui.gd" id="1_pj6rs"]
 [ext_resource type="Script" path="res://addons/gloot/ui/ctrl_inventory_grid.gd" id="2_bwdsy"]
 [ext_resource type="PackedScene" uid="uid://da47abx5vx1x2" path="res://shared/compass/compass.tscn" id="3_ety4p"]
 [ext_resource type="Texture2D" uid="uid://dojni262i4fb7" path="res://shared/gui/images/chest-xsmall.png" id="3_j71y0"]
-[ext_resource type="Texture2D" uid="uid://pqdxtsc06iav" path="res://shared/gui/images/settings-xsmall.png" id="4_fn3ie"]
 [ext_resource type="Texture2D" uid="uid://bmr8rjtcjauci" path="res://shared/gui/images/frame-xsmall.png" id="6_e131k"]
 [ext_resource type="Script" path="res://addons/gloot/core/item_slot.gd" id="6_htlug"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory_item.gd" id="9_1gao2"]
 [ext_resource type="Resource" uid="uid://sfu16mj28v8o" path="res://resources/inventory.tres" id="9_28371"]
 [ext_resource type="Script" path="res://addons/gloot/core/inventory_grid.gd" id="10_bouv6"]
 [ext_resource type="Script" path="res://addons/gloot/ui/ctrl_item_slot.gd" id="12_5p7ce"]
@@ -44,49 +42,10 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 texture = ExtResource("6_e131k")
 
-[node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="SettingsButton" type="TextureButton" parent="HBoxContainer/MarginContainer3"]
-layout_mode = 2
-texture_normal = ExtResource("4_fn3ie")
-stretch_mode = 3
-
 [node name="InventoryGrid" type="Node" parent="."]
 script = ExtResource("10_bouv6")
 size = Vector2i(10, 5)
 item_protoset = ExtResource("9_28371")
-
-[node name="_Node_183442" type="Node" parent="InventoryGrid"]
-script = ExtResource("9_1gao2")
-protoset = ExtResource("9_28371")
-prototype_id = "spade"
-
-[node name="_Node_38765" type="Node" parent="InventoryGrid"]
-script = ExtResource("9_1gao2")
-protoset = ExtResource("9_28371")
-prototype_id = "black-rose"
-properties = {
-"grid_position": Vector2i(0, 1)
-}
-
-[node name="_Node_38804" type="Node" parent="InventoryGrid"]
-script = ExtResource("9_1gao2")
-protoset = ExtResource("9_28371")
-prototype_id = "ring"
-properties = {
-"grid_position": Vector2i(0, 2)
-}
-
-[node name="_Node_38868" type="Node" parent="InventoryGrid"]
-script = ExtResource("9_1gao2")
-protoset = ExtResource("9_28371")
-prototype_id = "dagger"
-properties = {
-"grid_position": Vector2i(0, 3)
-}
 
 [node name="InventoryContainer" type="CenterContainer" parent="."]
 unique_name_in_owner = true

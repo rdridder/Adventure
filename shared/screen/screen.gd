@@ -13,12 +13,18 @@ func _ready():
 	Transitions.post_transition.connect(initNavigatableScene)
 	initNavigatableScene()
 	
+func _exit_tree() -> void:
+	if(Transitions.post_transition.is_connected(initNavigatableScene)):
+		Transitions.post_transition.disconnect(initNavigatableScene)
+	
+func worldItemsPickedUp(items : Array[InventoryItem]):
+	pass
+	
 func initNavigatableScene() -> void:
 	navigatableScene = %SceneHolder.get_child(0)	
 	navigation = navigatableScene.getNavigation()
 	compassScene.setDirections(navigation)
 	compassScene.setHandlingCLick(false)
-		
 	
 func handleNavigation(direction : String):
 	var scenePath : String = navigation[direction]
@@ -26,7 +32,3 @@ func handleNavigation(direction : String):
 	var scene : NavigatableScene = sceneToLoad.instantiate()
 	Transitions.change_scene_to_instance(scene, Transitions.FadeType.CrossFade, 0.5)
 	print("Nav in screen: "+direction)
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

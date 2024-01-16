@@ -17,9 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalInventory="*res://shared/inventory/inventory.tscn"
 Transitions="*res://addons/transitions/Transitions.gd"
 FancyFade="*res://addons/transitions/FancyFade.gd"
+EventBus="*res://classes/EventBus.gd"
+GlobalInventory="*res://shared/inventory/global-inventory.tscn"
 
 [display]
 

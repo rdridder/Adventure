@@ -7,6 +7,7 @@ class_name NavigatableScene extends Node2D
 @export_file("*.tscn") var south = null
 @export_file("*.tscn") var west = null
 	
+	
 func getNavigation() -> Dictionary:
 	var navigation = {}
 	if(isEditorValueSet(north)):
@@ -27,3 +28,6 @@ func isEditorValueSet(editorValue) -> bool:
 		return false
 	return true
 		
+func _on_pickupinventory_item_clicked(selectedItem : InventoryItem) -> void: 
+	print("inventory clicked")
+	print(selectedItem)

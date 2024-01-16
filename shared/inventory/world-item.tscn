@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch7duqu8ke4wv"]
+
+[ext_resource type="Script" path="res://shared/inventory/world-item.gd" id="1_3xwng"]
+[ext_resource type="Script" path="res://addons/gloot/core/inventory.gd" id="2_hkarg"]
+[ext_resource type="Resource" uid="uid://sfu16mj28v8o" path="res://resources/inventory.tres" id="3_y530i"]
+[ext_resource type="Script" path="res://addons/gloot/core/inventory_item.gd" id="4_xj8nk"]
+[ext_resource type="Texture2D" uid="uid://6m2rp24nay4f" path="res://shared/inventory/images/spade2-world.png" id="5_cjoep"]
+
+[node name="World-item" type="Node2D"]
+script = ExtResource("1_3xwng")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("2_hkarg")
+item_protoset = ExtResource("3_y530i")
+
+[node name="_Node_59180" type="Node" parent="Inventory"]
+script = ExtResource("4_xj8nk")
+protoset = ExtResource("3_y530i")
+prototype_id = "spade"
+
+[node name="WorldImage" type="Sprite2D" parent="."]
+texture = ExtResource("5_cjoep")
+centered = false
+
+[node name="PickupArea" type="Area2D" parent="."]
+position = Vector2(0, 20)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PickupArea"]
+visible = false
+polygon = PackedVector2Array(1, 7, 105, -18, 87, 48, 1, 97)
+
+[connection signal="input_event" from="PickupArea" to="." method="_on_area_2d_input_event"]

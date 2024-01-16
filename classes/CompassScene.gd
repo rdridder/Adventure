@@ -74,3 +74,4 @@ func handleClick(direction : String) -> void:
 		return
 	_handlingClick = true
 	_clickCallback.call(direction)
+	
