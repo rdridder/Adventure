@@ -4,6 +4,8 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("Label").modulate.a = 0
+	showMessage()
+	
 
 func showMessage():
 	var player = get_node("AnimationPlayer")

@@ -42,7 +42,7 @@ _data = {
 script = ExtResource("1_moepf")
 
 [node name="Label" type="Label" parent="."]
-modulate = Color(0, 0, 0, 0.375)
+modulate = Color(0, 0, 0, 0)
 offset_left = 147.0
 offset_top = 243.0
 offset_right = 1664.0

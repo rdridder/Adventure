@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vrwmg3wa0okq"
-path="res://.godot/imported/eye.webp-8c706ae800bfce019388d16de14e108c.ctex"
+uid="uid://c6gsxajwx2gco"
+path="res://.godot/imported/hand.png-d1da68713c1414551e4fd49953ccd04b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://shared/gui/images/eye.webp"
-dest_files=["res://.godot/imported/eye.webp-8c706ae800bfce019388d16de14e108c.ctex"]
+source_file="res://shared/gui/images/hand.png"
+dest_files=["res://.godot/imported/hand.png-d1da68713c1414551e4fd49953ccd04b.ctex"]
 
 [params]
 

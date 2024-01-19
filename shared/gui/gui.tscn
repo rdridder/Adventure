@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://enqihp2ojtwd"]
+[gd_scene load_steps=12 format=3 uid="uid://enqihp2ojtwd"]
 
 [ext_resource type="Script" path="res://shared/gui/gui.gd" id="1_pj6rs"]
 [ext_resource type="Script" path="res://addons/gloot/ui/ctrl_inventory_grid.gd" id="2_bwdsy"]
 [ext_resource type="PackedScene" uid="uid://da47abx5vx1x2" path="res://shared/compass/compass.tscn" id="3_ety4p"]
 [ext_resource type="Texture2D" uid="uid://dojni262i4fb7" path="res://shared/gui/images/chest-xsmall.png" id="3_j71y0"]
+[ext_resource type="Texture2D" uid="uid://3gcgfp7mf8xa" path="res://shared/gui/images/eye-xsmall.png" id="5_28nti"]
 [ext_resource type="Texture2D" uid="uid://bmr8rjtcjauci" path="res://shared/gui/images/frame-xsmall.png" id="6_e131k"]
 [ext_resource type="Script" path="res://addons/gloot/core/item_slot.gd" id="6_htlug"]
 [ext_resource type="Resource" uid="uid://sfu16mj28v8o" path="res://resources/inventory.tres" id="9_28371"]
+[ext_resource type="PackedScene" uid="uid://8qu0tlkgu34p" path="res://shared/textbox/text-box.tscn" id="10_7ix3w"]
 [ext_resource type="Script" path="res://addons/gloot/core/inventory_grid.gd" id="10_bouv6"]
 [ext_resource type="Script" path="res://addons/gloot/ui/ctrl_item_slot.gd" id="12_5p7ce"]
 
@@ -22,25 +24,35 @@ offset_top = 850.0
 offset_right = 858.0
 offset_bottom = 1020.0
 
-[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+[node name="MarginContainerChest" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="ChestButton" type="TextureButton" parent="HBoxContainer/MarginContainer2"]
+[node name="ChestButton" type="TextureButton" parent="HBoxContainer/MarginContainerChest"]
 layout_mode = 2
 tooltip_text = "Click to access your inventory."
 texture_normal = ExtResource("3_j71y0")
 stretch_mode = 5
 
-[node name="MarginContainer4" type="MarginContainer" parent="HBoxContainer"]
+[node name="MarginContainerItem" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="ItemSlot" type="TextureRect" parent="HBoxContainer/MarginContainer4"]
+[node name="ItemSlot" type="TextureRect" parent="HBoxContainer/MarginContainerItem"]
 layout_mode = 2
 texture = ExtResource("6_e131k")
+
+[node name="MarginContainerMode" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ModeButton" type="TextureButton" parent="HBoxContainer/MarginContainerMode"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("5_28nti")
 
 [node name="InventoryGrid" type="Node" parent="."]
 script = ExtResource("10_bouv6")
@@ -98,5 +110,9 @@ item_slot_path = NodePath("../ItemSlot")
 icon_scaling = Vector2(0.6, 0.6)
 label_visible = false
 
-[connection signal="pressed" from="HBoxContainer/MarginContainer2/ChestButton" to="." method="_on_chest_button_pressed"]
+[node name="Text-box" parent="." instance=ExtResource("10_7ix3w")]
+position = Vector2(69, -64)
+
+[connection signal="pressed" from="HBoxContainer/MarginContainerChest/ChestButton" to="." method="_on_chest_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainerMode/ModeButton" to="." method="_on_mode_button_pressed"]
 [connection signal="pressed" from="InventoryContainer/VBoxContainer/CloseInventoryButton" to="." method="_on_close_inventory_button_pressed"]
