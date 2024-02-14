@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bocjkiori1a0s"]
 
 [ext_resource type="Script" path="res://shared/screen/screen.gd" id="1_274c5"]
-[ext_resource type="PackedScene" uid="uid://b0flwk5g1jv3o" path="res://screens/forest/forest.tscn" id="2_38mbp"]
+[ext_resource type="PackedScene" uid="uid://ctk6fblvi2hqd" path="res://screens/introduction/introduction.tscn" id="2_mpiy6"]
 [ext_resource type="PackedScene" uid="uid://enqihp2ojtwd" path="res://shared/gui/gui.tscn" id="2_uiany"]
 
 [node name="Screen" type="Node2D"]
@@ -10,9 +10,7 @@ script = ExtResource("1_274c5")
 [node name="SceneHolder" type="Node2D" parent="."]
 unique_name_in_owner = true
 
-[node name="Forest" parent="SceneHolder" instance=ExtResource("2_38mbp")]
-east = "<null>"
-south = ""
+[node name="Introduction" parent="SceneHolder" instance=ExtResource("2_mpiy6")]
 
 [node name="Gui" parent="." instance=ExtResource("2_uiany")]
 unique_name_in_owner = true

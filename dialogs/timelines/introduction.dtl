@@ -1,0 +1,9 @@
+join narrator 4
+narrator: In the heart of the world, where the trees whisper secrets of a thousand years, lies the Enchanted Forest of Darkwood. A place not marked on any map, for those who enter seldom return to tell the tale.\
+\
+Legend speaks of a curse that blankets the land, a shadow born from forgotten magic and ancient vendettas. It is here, amidst the whispers of the dead and the watchful eyes of the unseen, our tale begins.
+join prince 0
+prince: This must be the place... the Enchanted Forest of Darkwood. I can feel the magic in the air, and yet, there's something unsettling about this silence.
+narrator: With courage as your shield and curiosity as your guide, step forth into the shadows of Darkwood. Uncover its secrets, break the ancient curse, and change the fate of a kingdom forever lost to the mists of time.
+leave narrator
+leave prince

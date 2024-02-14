@@ -1,0 +1,8 @@
+forest-witch: You have one choice.
+- What do you want to do ?
+- Stay
+	[background arg="res://dialogs/images/morrigan.png" fade="0.0"]
+	prince: Ok, you stay
+- Leave
+	[background arg="res://dialogs/images/prince.png" fade="0.0"]
+	prince: Ok, you don't stay

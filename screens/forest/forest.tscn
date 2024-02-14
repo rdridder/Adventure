@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://screens/forest/forest.gd" id="1_ecuk4"]
 [ext_resource type="Texture2D" uid="uid://comw0as2f3imu" path="res://screens/forest/assets/9ec31c36-79b8-4a4a-9328-622f1d67471f.webp" id="1_y3xup"]
 [ext_resource type="Script" path="res://screens/forest/scripts/forest.gd" id="2_kl66j"]
-[ext_resource type="PackedScene" uid="uid://enqihp2ojtwd" path="res://shared/gui/gui.tscn" id="3_o88om"]
 [ext_resource type="PackedScene" uid="uid://b4mq375ctqnkh" path="res://shared/mouseover/mouseover.tscn" id="3_olaur"]
 [ext_resource type="Texture2D" uid="uid://4bv6g5knyvc7" path="res://screens/forest/assets/small-skull-highlight.png" id="4_hffdf"]
 [ext_resource type="Texture2D" uid="uid://bqak1dlosrh4g" path="res://screens/forest/assets/big-skull-highlight.png" id="4_sn7hb"]
+[ext_resource type="PackedScene" uid="uid://b22222eprw6l0" path="res://shared/look-interaction/look-interaction.tscn" id="8_tjsaw"]
 
 [node name="Forest" type="Node2D"]
 script = ExtResource("1_ecuk4")
@@ -17,8 +17,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_y3xup")
 script = ExtResource("2_kl66j")
-
-[node name="Gui" parent="Background" instance=ExtResource("3_o88om")]
 
 [node name="Small skull" parent="Background" instance=ExtResource("3_olaur")]
 position = Vector2(360.477, 672.281)
@@ -48,5 +46,22 @@ texture = ExtResource("4_sn7hb")
 [node name="HoverLabel" parent="Background/Large skull" index="2"]
 text = "Several skulls lie scattered in the forest, this is a big one."
 
+[node name="Node" type="Node" parent="Background"]
+
+[node name="World -look-interaction" parent="Background/Node" instance=ExtResource("8_tjsaw")]
+position = Vector2(408, 104)
+dialogId = "World"
+
+[node name="CollisionPolygon2D" parent="Background/Node/World -look-interaction/Area2D" index="0"]
+polygon = PackedVector2Array(-280, -171, 1328, -171, 1324, 828, 461, 563, -38, 559)
+
+[node name="Look-interaction" parent="Background/Node" instance=ExtResource("8_tjsaw")]
+dialogId = "Tree"
+
+[node name="CollisionPolygon2D" parent="Background/Node/Look-interaction/Area2D" index="0"]
+polygon = PackedVector2Array(-60, -92, 85, -67, 305, 652, -62, 644)
+
 [editable path="Background/Small skull"]
 [editable path="Background/Large skull"]
+[editable path="Background/Node/World -look-interaction"]
+[editable path="Background/Node/Look-interaction"]
